@@ -1,6 +1,6 @@
-function logout(res, req){
+function logout(req, res){
     req.logout();
-    res.redirect('/')
+    res.redirect('/login')
 }
 
 module.exports = {
