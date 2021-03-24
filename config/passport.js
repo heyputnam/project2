@@ -15,7 +15,7 @@ module.exports = function (passport) {
           displayName: profile.displayName,
           firstName: profile.name.givenName,
           lastName: profile.name.familyName,
-          image: profile.picture,
+          image: profile.photos[0].value,
       }
       console.log(profile)
       try{
