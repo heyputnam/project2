@@ -1,7 +1,10 @@
 const express = require('express');
 const morgan = require('morgan');
+const mongoose = require('mongoose')
 const session = require('express-session');
+const MongoStore = require('connect-mongo');
 const passport = require('passport')
+const connectDB = require('./config/db')
 require('ejs');
 const port = 3000;
 const indexRouter = require('./routes/index');
@@ -26,7 +29,9 @@ app.use(
     session({
         secret: 'supersecret',
         resave: false,
-        saveUninitialized: false
+        saveUninitialized: false,
+        store: new MongoStore({mongoUrl: 'mongodb+srv://hailey:abc1234@cluster0.rciby.mongodb.net/project2again?retryWrites=true&w=majority'})
+        
     })
 ); 
 
