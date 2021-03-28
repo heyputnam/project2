@@ -3,10 +3,14 @@
 
 
     const postSchema = new Schema({
-        title: String,
         body: String,
         song: String,
         mood: String,
+        status: {
+            type: String,
+            default: 'public',
+            enum: ['public', 'private'],
+          },
         createdAt: {
             type: Date,
             default: Date.now,

@@ -1,0 +1,18 @@
+<%- include ('../partials/header.ejs')%>
+<%- include ('../partials/navbar.ejs')%>
+<div class="row">
+    <% post.forEach(function(p){ %>
+    <div class="col s12 m4">
+        <div class="card">
+            <div class="card-content center-align">
+                <h5><%= p.mood%></h5>
+                <p><%= p.body%></p>
+            </div>
+            <div class="card-action center-align">
+                <a href="/post/<%=p._id%>" class="btn grey">More</a>
+            </div>
+        </div>
+    </div>
+   <% }) %>
+</div>
+<%- include ('../partials/footer.ejs')%>

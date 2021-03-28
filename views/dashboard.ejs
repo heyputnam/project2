@@ -8,16 +8,16 @@
 <table class="stripped">
     <thead>
         <tr>
-            <th>Titile</th>
-            <th>Song</th>
             <th>Mood</th>
+            <th>Song</th>
+            <th>Date</th>
         </tr>
         <tbody>
             <% posts.forEach(function(p){ %>
                 <tr>
-                    <td><a href="post/<%=p._id%>"><%=p.title%></a></td>
+                    <td><a href="post/<%=p._id%>"><%=p.mood%></a></td>
                     <td><%=p.song%></td>
-                    <td><%=p.mood%></td>
+                    <td><%=p.createdAt.toLocaleDateString()%></td>
 
            <% }) %>
         </tbody>

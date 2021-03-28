@@ -1,17 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Edit a todo</title>
-</head>
+<%- include ('../partials/header.ejs')%>
+<%- include ('../partials/navbar.ejs')%>
 <body>
-    <h1>Edit mood: <%= post.title %></h1>
+    <h1>Edit entry: <%= post.title %></h1>
     <form action="/post/<%= post.id %>?_method=PUT" method="POST">
-        <input type="text" name="mood" value="<%= post.title %>">
-        <button type="submit">edit mood</button>
-    </form>
-</body>
-</html>
+
+        <div class="row">
+            <div class="input-feild">
+                <input type="text" id="text" name="song" value="<%=post.song%>">
+                <label for="song">Song</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-feild">
+                <input type="text" id="text" name="mood" value="<%=post.mood%>">
+                <label for="mood">Mood</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-feild">
+                <h5>want to edit your thoughts?</h5>
+                <input name="body" id="body" cols="30" rows="10" value="<%=post.body%>">
+            </div>
+        </div>
+
+        <div class="row">
+        <input type="submit" class="btn" value="edit entry">
+    <%- include ('../partials/footer.ejs')%>
+ 

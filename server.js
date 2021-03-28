@@ -10,6 +10,7 @@ const port = 3000;
 const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
 const postRouter = require('./routes/posts');
+const publicRouter = require('./routes/public')
 const methodOverride = require('method-override')
 const app = express();
 
@@ -45,7 +46,8 @@ app.use(
 
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
-app.use('/post', postRouter)
+app.use('/post', postRouter);
+app.use('/public', publicRouter);
 
 
 app.listen(port, function(){
