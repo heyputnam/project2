@@ -1,0 +1,38 @@
+<%- include ('../partials/header.ejs')%>
+<h3>Add Post</h3>
+<div class="row">
+    <form action="/post" method="POST" class="col 12">
+        <div class="row">
+            <div class="input-feild">
+                <input type="text" id="text" name="title">
+                <label for="title">Title</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-feild">
+                <input type="text" id="text" name="song">
+                <label for="song">Song</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-feild">
+                <input type="text" id="text" name="mood">
+                <label for="mood">Mood</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-feild">
+                <h5>tell them your thoughts</h5>
+                <textarea name="body" id="body" cols="30" rows="10"></textarea>
+            </div>
+        </div>
+
+        <div class="row">
+        <input type="submit" class="btn">Add post 
+        <a href="/dashboard" class="btn orange">Cancel</a>
+        </div>
+    </form>
+</div>

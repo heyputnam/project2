@@ -9,10 +9,10 @@ const Post = require('../models/posts');
 
 router.get('/', indexCtrl.login);
 router.get('/dashboard', async function(req, res){
-    const posts = await Post.find({user: req.session.passport.user})
+    const posts = await Post.find({user: req.session.user._id})
     console.log(posts)
     console.log(req.session.user.firstName)
-    res.render('dashboard', {name: req.session.user.firstName})
+    res.render('dashboard', {name: req.session.user.firstName, posts})
 });
 
 

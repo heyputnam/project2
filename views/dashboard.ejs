@@ -1,7 +1,29 @@
 <%- include('partials/header.ejs') %>
 <%- include('partials/navbar.ejs') %>
 <body>
-    <h1><%=name%>dashboard</h1>
+    <h1><%=name%>'s dashboard</h1>
+<% if(!posts.length === 0){ %>
+   you do not have any posts
+<% } else { %>
+<table class="stripped">
+    <thead>
+        <tr>
+            <th>Titile</th>
+            <th>Song</th>
+            <th>Mood</th>
+        </tr>
+        <tbody>
+            <% posts.forEach(function(p){ %>
+                <tr>
+                    <td><a href="post/<%=p._id%>"><%=p.title%></a></td>
+                    <td><%=p.song%></td>
+                    <td><%=p.mood%></td>
 
-
+           <% }) %>
+        </tbody>
+    </thead>
+</table>
+    <%  %>
+<%}%>
+<%- include('partials/addpost.ejs') %>
 <%- include('partials/footer.ejs') %>

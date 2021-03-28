@@ -9,6 +9,8 @@ require('ejs');
 const port = 3000;
 const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
+const postRouter = require('./routes/posts');
+const methodOverride = require('method-override')
 const app = express();
 
 require('./config/db');
@@ -19,6 +21,7 @@ app.set('view engine', 'ejs');
 app.use(morgan('dev'));
 app.use(express.static('public'));
 app.use(express.urlencoded({extended: false}));
+app.use(methodOverride('_method'));
 
 
 app.use(passport.initialize());
@@ -42,6 +45,7 @@ app.use(
 
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
+app.use('/post', postRouter)
 
 
 app.listen(port, function(){
