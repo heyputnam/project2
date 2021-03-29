@@ -6,7 +6,7 @@ const MongoStore = require('connect-mongo');
 const passport = require('passport')
 const connectDB = require('./config/db')
 require('ejs');
-const port = 3000;
+const port = process.env.port || 3000;
 const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
 const postRouter = require('./routes/posts');
