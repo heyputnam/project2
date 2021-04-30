@@ -1,4 +1,4 @@
-const Post = require('../models/posts')
+const Post = require('../Models/posts')
 
 
 function public(req, res){
