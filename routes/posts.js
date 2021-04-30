@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const postCtrl = require('../controllers/posts');
-const Post = require('../Models/posts');
+const Post = require('../models/posts');
 
 router.get('/add', postCtrl.add)
 

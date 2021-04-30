@@ -1,5 +1,5 @@
 const { session } = require("passport");
-const Post = require('../Models/posts')
+const Post = require('../models/posts')
 
 
 

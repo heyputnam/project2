@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const indexCtrl = require('../controllers/index');
-const Post = require('../Models/posts');
+const Post = require('../models/posts');
 
 
 
